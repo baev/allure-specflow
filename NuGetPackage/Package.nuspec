@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>SpecFlow.Allure</id>
+    <version>1.0.0</version>
+    <title>SpecFlow.Allure</title>
+    <authors>Alexander Bakanov</authors>
+    <owners></owners>
+    <description>
+      SpecFlow plugin that creates Yandex Allure source report files for Specflow test run.  
+    </description>
+    <releaseNotes>
+    </releaseNotes>
+    <summary>
+    </summary>
+    <language>en-US</language>
+    <projectUrl>https://github.com/Bakanych/SpecFlow.Allure</projectUrl>
+    <iconUrl>https://nuget.org/Content/Images/packageDefaultIcon-50x50.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>http://opensource.org/licenses/Apache-2.0</licenseUrl>
+    <copyright>Copyright  2016</copyright>
+    <dependencies>
+        <group targetFramework="net45">
+          <dependency id="log4net" version="2.0.5" />
+          <dependency id="SpecFlow" version="2.1.0" />
+        </group>
+    </dependencies>
+    <references></references>
+    <tags>allure specflow</tags>
+  </metadata>
+  <files>
+    <file src="..\SpecFlow.Allure\bin\Release\AllureCSharpCommons.dll" target="lib\net45" />
+    <file src="..\SpecFlow.Allure\bin\Release\SpecFlow.Allure.SpecFlowPlugin.dll" target="lib\net45" />
+    <file src="..\SpecFlow.Allure\bin\Release\SpecFlow.Allure.SpecFlowPlugin.dll.config" target="content" />
+    <file src="tools\" target="tools" />
+    <file src="content\" target="content" />
+  </files>
+</package>
