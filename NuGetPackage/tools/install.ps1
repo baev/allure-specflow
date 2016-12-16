@@ -7,7 +7,7 @@ param($installPath, $toolsPath, $package, $project)
 # $package is a reference to the package object.
 # $project is a reference to the project the package was installed to.
 
-$configFile = $project.ProjectItems.Item("Allure.SpecFlowPlugin.dll.config")
+$configFile = $project.ProjectItems.Item("SpecFlow.Allure.SpecFlowPlugin.dll.config")
 
 # set 'Copy To Output Directory' to 'Copy if newer'
 $copyToOutput1 = $configFile.Properties.Item("CopyToOutputDirectory")

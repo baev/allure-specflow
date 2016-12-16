@@ -79,6 +79,7 @@
     <Folder Include="src\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="icon.png" />
     <Content Include="NuGet.exe" />
   </ItemGroup>
   <ItemGroup>
