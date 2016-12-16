@@ -7,7 +7,7 @@
     <authors>Alexander Bakanov</authors>
     <owners></owners>
     <description>
-      SpecFlow plugin that creates Yandex Allure source report files for Specflow test run.  
+      SpecFlow plugin that creates Yandex Allure source report files for SpecFlow test run.  
     </description>
     <releaseNotes>
     </releaseNotes>
@@ -15,7 +15,7 @@
     </summary>
     <language>en-US</language>
     <projectUrl>https://github.com/Bakanych/SpecFlow.Allure</projectUrl>
-    <iconUrl>https://nuget.org/Content/Images/packageDefaultIcon-50x50.png</iconUrl>
+    <iconUrl>https://raw.githubusercontent.com/Bakanych/SpecFlow.Allure/master/NuGetPackage/icon.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <licenseUrl>http://opensource.org/licenses/Apache-2.0</licenseUrl>
     <copyright>Copyright  2016</copyright>

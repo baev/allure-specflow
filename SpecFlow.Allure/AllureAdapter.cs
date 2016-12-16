@@ -17,7 +17,7 @@ namespace SpecFlow.Allure
     internal class AllureAdapter
     {
         static readonly Lazy<AllureAdapter> lazy = new Lazy<AllureAdapter>(() => new AllureAdapter());
-        object lockObj = new object();
+        static readonly object lockObj = new object();
         string attachmentKey;
         AllureCSharpCommons.Allure lifecycle = AllureCSharpCommons.Allure.Lifecycle;
 
