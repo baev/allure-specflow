@@ -36,7 +36,7 @@ namespace SpecFlow.Allure
         void ITestTracer.TraceError(Exception ex)
         {
             base.TraceError(ex);
-            adapter.FailStep(ex);
+            adapter.FailStep();
 
         }
         void ITestTracer.TraceStepSkipped()
@@ -48,8 +48,14 @@ namespace SpecFlow.Allure
         void ITestTracer.TraceStepPending(BindingMatch match, object[] arguments)
         {
             base.TraceStepPending(match, arguments);
-            adapter.CancelStep();
+            adapter.PendingStep();
 
+        }
+
+        void ITestTracer.TraceNoMatchingStepDefinition(StepInstance stepInstance, TechTalk.SpecFlow.ProgrammingLanguage targetLanguage, System.Globalization.CultureInfo bindingCulture, List<BindingMatch> matchesWithoutScopeCheck)
+        {
+            base.TraceNoMatchingStepDefinition(stepInstance, targetLanguage, bindingCulture, matchesWithoutScopeCheck);
+            adapter.FailStep();
         }
     }
 }

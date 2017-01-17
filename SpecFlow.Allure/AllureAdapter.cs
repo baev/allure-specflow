@@ -80,9 +80,9 @@ namespace SpecFlow.Allure
             }
         }
 
-        public void FailStep(Exception exception)
+        public void FailStep()
         {
-            lifecycle.Fire(new StepFailureEvent() { Throwable = exception });
+            lifecycle.Fire(new StepFailureEvent());
             FinishStep();
         }
 
@@ -97,36 +97,48 @@ namespace SpecFlow.Allure
             FinishStep();
         }
 
-        public void CancelTestCase(FeatureInfo featureInfo, Exception exception)
+        public void PendingStep()
+        {
+            lifecycle.Fire(new StepPendingEvent());
+            FinishStep();
+
+        }
+        public void CancelTestCase(Exception exception)
         {
             TestCaseCanceledEvent testCaseCanceled = new TestCaseCanceledEvent()
             {
                 Throwable = exception,
-                StackTrace = exception.StackTrace,
-                SuiteUid = GetTestSuiteIdForCurrentThread(featureInfo)
+                StackTrace = exception.StackTrace
             };
             lifecycle.Fire(testCaseCanceled);
             lifecycle.Fire(new TestCaseFinishedEvent());
         }
-        public void FinishTestCase(FeatureInfo featureInfo, ScenarioContext scenarioContext, Exception exception = null)
+        public void FinishTestCase(ScenarioContext scenarioContext, Exception exception = null)
         {
             AddAttachments(scenarioContext);
 
             var error = exception ?? scenarioContext.TestError;
             if (error != null)
             {
-                TestCaseFailureEvent failure = new TestCaseFailureEvent();
-                failure.Throwable = error;
-                failure.StackTrace = error.StackTrace;
+                TestCaseFailureEvent failure = new TestCaseFailureEvent()
+                {
+                    Throwable = error,
+                    StackTrace = error.StackTrace
+                };
                 lifecycle.Fire(failure);
             }
             lifecycle.Fire(new TestCaseFinishedEvent());
         }
 
+        public void PendingTestCase(Exception ex)
+        {
+            lifecycle.Fire(new TestCasePendingEvent() { Throwable = ex });
+            lifecycle.Fire(new TestCaseFinishedEvent());
+        }
         public void FailTestSuite(FeatureInfo featureInfo, ScenarioInfo scenarioInfo, Exception exception)
         {
             StartTestCase(featureInfo, scenarioInfo);
-            CancelTestCase(featureInfo, exception);
+            CancelTestCase(exception);
             FinishSuite(featureInfo);
         }
 

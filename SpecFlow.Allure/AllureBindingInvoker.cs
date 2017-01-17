@@ -47,12 +47,12 @@ namespace SpecFlow.Allure
                             break;
 
                         case HookType.BeforeScenario:
-                            adapter.CancelTestCase(contextManager.FeatureContext.FeatureInfo, ex);
+                            adapter.CancelTestCase(ex);
                             break;
 
                         case HookType.AfterScenario:
                         case HookType.AfterStep:
-                            adapter.FinishTestCase(contextManager.FeatureContext.FeatureInfo, contextManager.ScenarioContext, ex);
+                            adapter.FinishTestCase(contextManager.ScenarioContext, ex);
                             break;
 
                         case HookType.BeforeStep:

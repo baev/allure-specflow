@@ -21,6 +21,9 @@ namespace SpecFlow.Allure
 
             runtimePluginEvents.CustomizeTestThreadDependencies += (sender, args) =>
                 args.ObjectContainer.RegisterTypeAs<AllureTestTracer, ITestTracer>();
+
+            runtimePluginEvents.CustomizeTestThreadDependencies += (sender, args) => 
+                args.ObjectContainer.RegisterTypeAs<AllureTestExecutionEngine, ITestExecutionEngine>();
         }
     }
 }

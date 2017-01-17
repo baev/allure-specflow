@@ -64,29 +64,34 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Hooks.cs" />
-    <Compile Include="FeatureHook.feature.cs">
+    <Compile Include="Features\Invalid Steps.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>FeatureHook.feature</DependentUpon>
+      <DependentUpon>Invalid Steps.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Hooks.cs" />
+    <Compile Include="Features\Feature Hook.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Feature Hook.feature</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ScenarioHooks.feature.cs">
+    <Compile Include="Features\Scenario Hooks.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ScenarioHooks.feature</DependentUpon>
+      <DependentUpon>Scenario Hooks.feature</DependentUpon>
     </Compile>
-    <Compile Include="Smoke.feature.cs">
+    <Compile Include="Features\Smoke.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Smoke.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tags2.feature.cs">
+    <Compile Include="Features\Tags2.feature.cs">
       <DependentUpon>Tags2.feature</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Tags1.feature.cs">
+    <Compile Include="Features\Tags1.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Tags1.feature</DependentUpon>
@@ -97,35 +102,36 @@
     <None Include="Default.srprofile">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="FeatureHook.feature">
+    <None Include="Features\Feature Hook.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>FeatureHook.feature.cs</LastGenOutput>
+      <LastGenOutput>Feature Hook.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\Invalid Steps.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Invalid Steps.feature.cs</LastGenOutput>
     </None>
     <None Include="runtests.cmd" />
-    <None Include="ScenarioHooks.feature">
+    <None Include="Features\Scenario Hooks.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>ScenarioHooks.feature.cs</LastGenOutput>
+      <LastGenOutput>Scenario Hooks.feature.cs</LastGenOutput>
     </None>
     <None Include="SpecFlow.Allure.SpecFlowPlugin.dll.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="App.config" />
     <None Include="packages.config" />
-    <None Include="Smoke.feature">
+    <None Include="Features\Smoke.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Smoke.feature.cs</LastGenOutput>
     </None>
     <None Include="SpecRunTestProfile.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="SpecRunTestProfile_2011_09.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Tags2.feature">
+    <None Include="Features\Tags2.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Tags2.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tags1.feature">
+    <None Include="Features\Tags1.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Tags1.feature.cs</LastGenOutput>
     </None>

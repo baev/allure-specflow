@@ -52,6 +52,7 @@
     <Compile Include="AllureAdapter.cs" />
     <Compile Include="AllurePlugin.cs" />
     <Compile Include="AllurePluginHooks.cs" />
+    <Compile Include="AllureTestExecutionEngine.cs" />
     <Compile Include="AllureTestTracer.cs" />
     <Compile Include="Attachment.cs" />
     <Compile Include="AllureBindingInvoker.cs" />

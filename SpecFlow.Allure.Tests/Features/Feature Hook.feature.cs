@@ -10,29 +10,31 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace SpecFlow.Allure.Tests
+namespace SpecFlow.Allure.Tests.Features
 {
     using TechTalk.SpecFlow;
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("Tags1", new string[] {
-            "foo"}, SourceFile="Tags1.feature", SourceLine=1)]
-    public partial class Tags1Feature
+    [TechTalk.SpecRun.FeatureAttribute("Feature Hooks", new string[] {
+            "hooks",
+            "BeforeFeatureFailed"}, SourceFile="Features\\Feature Hook.feature", SourceLine=1)]
+    public partial class FeatureHooksFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "Tags1.feature"
+#line 1 "Feature Hook.feature"
 #line hidden
         
         [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Tags1", null, ProgrammingLanguage.CSharp, new string[] {
-                        "foo"});
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Feature Hooks", null, ProgrammingLanguage.CSharp, new string[] {
+                        "hooks",
+                        "BeforeFeatureFailed"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -63,35 +65,11 @@ namespace SpecFlow.Allure.Tests
             testRunner.CollectScenarioErrors();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Foo and Bar", new string[] {
-                "bar"}, SourceLine=4)]
-        public virtual void FooAndBar()
+        [TechTalk.SpecRun.ScenarioAttribute("Should handle BeforeFeature failure", SourceLine=3)]
+        public virtual void ShouldHandleBeforeFeatureFailure()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Foo and Bar", new string[] {
-                        "bar"});
-#line 5
-this.ScenarioSetup(scenarioInfo);
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("Foo 1", SourceLine=6)]
-        public virtual void Foo1()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Foo 1", ((string[])(null)));
-#line 7
-this.ScenarioSetup(scenarioInfo);
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [TechTalk.SpecRun.ScenarioAttribute("Foo 2", new string[] {
-                "foo"}, SourceLine=9)]
-        public virtual void Foo2()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Foo 2", new string[] {
-                        "foo"});
-#line 10
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Should handle BeforeFeature failure", ((string[])(null)));
+#line 4
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             this.ScenarioCleanup();

@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>SpecFlow.Allure</id>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
     <title>SpecFlow.Allure</title>
     <authors>Alexander Bakanov</authors>
     <owners></owners>
@@ -10,6 +10,8 @@
       SpecFlow plugin that creates Yandex Allure source report files for SpecFlow test run.  
     </description>
     <releaseNotes>
+      1.1
+        - Inconclusive steps support
     </releaseNotes>
     <summary>
     </summary>

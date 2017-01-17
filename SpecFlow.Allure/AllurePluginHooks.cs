@@ -34,7 +34,7 @@ namespace SpecFlow.Allure
         [AfterScenario(Order = int.MaxValue)]
         public void AfterScenario()
         {
-            adapter.FinishTestCase(featureContext.FeatureInfo, scenarioContext);
+            adapter.FinishTestCase(scenarioContext);
         }
 
         [AfterFeature(Order = int.MaxValue)]
