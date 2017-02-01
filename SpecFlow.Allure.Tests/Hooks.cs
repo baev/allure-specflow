@@ -47,12 +47,15 @@ namespace SpecFlow.Allure.Tests
         [AfterScenario(tags: "Attachment")]
         public void PutAttachmentIntoContext()
         {
-            var types = new HashSet<string>() { "txt", "xml", "html", "png", "jpg", "json" };
-            foreach (var item in types)
+            var types = new HashSet<string>() { "txt", "xml", "html", "png", "jpg", "json", "uri" };
+
+            foreach (var extension in types)
             {
-                var path = $"test.{item}";
-                File.WriteAllText(path, "test text");
-                scenarioContext.Add($"allure-attachment{item}", path);
+                var path = $"test.{extension}";
+                File.WriteAllText(path, "http://yandex.ru");
+                scenarioContext.AddAllureAttachment(path, extension);
+                scenarioContext.AddAllureAttachment(path, extension);
+
             }
 
             throw new Exception();

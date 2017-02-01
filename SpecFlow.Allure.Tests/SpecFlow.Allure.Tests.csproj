@@ -115,9 +115,6 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Scenario Hooks.feature.cs</LastGenOutput>
     </None>
-    <None Include="SpecFlow.Allure.SpecFlowPlugin.dll.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="Features\Smoke.feature">

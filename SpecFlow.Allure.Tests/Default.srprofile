@@ -11,6 +11,9 @@
     <TestAssemblyPath>SpecFlow.Allure.Tests.dll</TestAssemblyPath>
   </TestAssemblyPaths>
   <DeploymentTransformation>
+    <GlobalSteps>
+      <CopyFile source="..\..\..\SpecFlow.Allure\App.config" target="{BaseFolder}\SpecFlow.Allure.SpecFlowPlugin.dll.config"/>
+    </GlobalSteps>
     <Steps>
       <!-- sample config transform to change the connection string-->
       <!--<ConfigFileTransformation configFile="App.config">

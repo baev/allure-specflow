@@ -18,7 +18,6 @@ namespace SpecFlow.Allure
     {
         static readonly Lazy<AllureAdapter> lazy = new Lazy<AllureAdapter>(() => new AllureAdapter());
         static readonly object lockObj = new object();
-        string attachmentKey;
         AllureCSharpCommons.Allure lifecycle = AllureCSharpCommons.Allure.Lifecycle;
 
         public static AllureAdapter Instance => lazy.Value;
@@ -27,9 +26,7 @@ namespace SpecFlow.Allure
         {
             lock (lockObj)
             {
-                var appConfig = ConfigurationManager.OpenExeConfiguration(Assembly.GetAssembly(typeof(AllureAdapter)).Location);
-                attachmentKey = appConfig.AppSettings.Settings["attachmentScenarioContextKey"].Value;
-                string path = appConfig.AppSettings.Settings["reportPath"].Value;
+                string path = Config.ResultsPath;
                 if (!path.EndsWith(Path.DirectorySeparatorChar.ToString()))
                 {
                     path += Path.DirectorySeparatorChar;
@@ -172,12 +169,12 @@ namespace SpecFlow.Allure
 
         private void AddAttachments(ScenarioContext scenarioContext)
         {
-            foreach (var key in scenarioContext.Keys.Where(x => x.StartsWith(attachmentKey)))
+            foreach (var key in scenarioContext.Keys.Where(x => x.StartsWith(Config.AttachmentKey)))
             {
-                var filePath = scenarioContext[key] as string;
-                var attachment = new Attachment(filePath, Guid.NewGuid().ToString());
-                MakeAttachmentEvent makeAttach = new MakeAttachmentEvent(
-                        attachment.Read(), attachment.Name, attachment.MimeType);
+                var contextValue = scenarioContext[key] as Tuple<string, string>;
+                var title = contextValue.Item1;
+                var filePath = contextValue.Item2;
+                MakeAttachmentEvent makeAttach = new MakeAttachmentEvent(filePath, title);
                 lifecycle.Fire(makeAttach);
             }
         }

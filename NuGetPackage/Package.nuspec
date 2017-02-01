@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>SpecFlow.Allure</id>
-    <version>1.1.0</version>
+    <version>1.2.0</version>
     <title>SpecFlow.Allure</title>
     <authors>Alexander Bakanov</authors>
     <owners></owners>
@@ -10,14 +10,16 @@
       SpecFlow plugin that creates Yandex Allure source report files for SpecFlow test run.  
     </description>
     <releaseNotes>
+      1.2
+        - Attachments refactoring
       1.1
         - Inconclusive steps support
     </releaseNotes>
     <summary>
     </summary>
     <language>en-US</language>
-    <projectUrl>https://github.com/Bakanych/SpecFlow.Allure</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/Bakanych/SpecFlow.Allure/master/NuGetPackage/icon.png</iconUrl>
+    <projectUrl>https://github.com/allure-framework/allure-specflow-adapter</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/allure-framework/allure-specflow-adapter/master/NuGetPackage/icon.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <licenseUrl>http://opensource.org/licenses/Apache-2.0</licenseUrl>
     <copyright>Copyright  2016</copyright>
