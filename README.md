@@ -1,4 +1,4 @@
-# SpecFlow.Allure
+# SpecFlow.Allure [![Build status](https://ci.appveyor.com/api/projects/status/fu1b367fiiayjc5e?svg=true)](https://ci.appveyor.com/project/Bakanych/allure-specflow)
 SpecFlow adapter for Yandex Allure reporting system.
 
 ### The nuget package [![NuGet Status](http://img.shields.io/nuget/v/Specflow.Allure.svg?style=flat)](https://www.nuget.org/packages/Specflow.Allure/)
