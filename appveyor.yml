@@ -6,3 +6,6 @@ before_build:
 
 build_script: 
   - msbuild SpecFlow.Allure.sln /p:Configuration=Debug /t:Rebuild
+  
+test_script:
+  - nunit3-console SpecFlow.Allure.Tests/bin/Debug/SpecFlow.Allure.Tests.dll
