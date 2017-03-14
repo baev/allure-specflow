@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>SpecFlow.Allure</id>
-    <version>1.2.0</version>
+    <version>1.2.1</version>
     <title>SpecFlow.Allure</title>
     <authors>Alexander Bakanov</authors>
     <owners></owners>
@@ -11,6 +11,7 @@
     </description>
     <releaseNotes>
       1.2
+        - .csv and .webm attachments support
         - Attachments refactoring
       1.1
         - Inconclusive steps support
