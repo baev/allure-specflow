@@ -17,6 +17,14 @@ namespace SpecFlow.Allure.Tests
         {
             this.featureContext = featureContext;
             this.scenarioContext = scenarioContext;
+
+        }
+
+        [BeforeTestRun]
+        public static void SetTestFolderForNUnit()
+        {
+            var dir = Path.GetDirectoryName(typeof(Hooks).Assembly.Location);
+            Environment.CurrentDirectory = dir;
         }
 
         [BeforeFeature(tags: "BeforeFeatureFailed")]

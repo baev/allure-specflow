@@ -16,7 +16,6 @@ namespace SpecFlow.Allure
 {
     public class AllureTestExecutionEngine : TestExecutionEngine, ITestExecutionEngine
     {
-        AllureAdapter adapter = AllureAdapter.Instance;
         public AllureTestExecutionEngine(IStepFormatter stepFormatter, ITestTracer testTracer, IErrorProvider errorProvider, IStepArgumentTypeConverter stepArgumentTypeConverter, RuntimeConfiguration runtimeConfiguration, IBindingRegistry bindingRegistry, IUnitTestRuntimeProvider unitTestRuntimeProvider, IStepDefinitionSkeletonProvider stepDefinitionSkeletonProvider, IContextManager contextManager, IStepDefinitionMatchService stepDefinitionMatchService, IDictionary<string, IStepErrorHandler> stepErrorHandlers, IBindingInvoker bindingInvoker) : base(stepFormatter, testTracer, errorProvider, stepArgumentTypeConverter, runtimeConfiguration, bindingRegistry, unitTestRuntimeProvider, stepDefinitionSkeletonProvider, contextManager, stepDefinitionMatchService, stepErrorHandlers, bindingInvoker)
         {
         }
@@ -32,7 +31,7 @@ namespace SpecFlow.Allure
             {
                 var stepDefEx = new MissingStepDefinitionException();
                 if (ex.Message.StartsWith(stepDefEx.Message))
-                    adapter.PendingTestCase(stepDefEx);
+                    AllureAdapter.Instance.PendingTestCase(stepDefEx);
 
                 throw;
             }

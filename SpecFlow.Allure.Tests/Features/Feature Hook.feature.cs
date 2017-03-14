@@ -81,6 +81,70 @@ this.ScenarioSetup(scenarioInfo);
             TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.1.0.0")]
+    [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+    [NUnit.Framework.TestFixtureAttribute()]
+    [NUnit.Framework.DescriptionAttribute("Feature Hooks")]
+    [NUnit.Framework.CategoryAttribute("hooks")]
+    [NUnit.Framework.CategoryAttribute("BeforeFeatureFailed")]
+    public partial class FeatureHooksFeature_NUnit
+    {
+        
+        private TechTalk.SpecFlow.ITestRunner testRunner;
+        
+#line 1 "Feature Hook.feature"
+#line hidden
+        
+        [NUnit.Framework.TestFixtureSetUpAttribute()]
+        public virtual void FeatureSetup()
+        {
+            testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Feature Hooks", null, ProgrammingLanguage.CSharp, new string[] {
+                        "hooks",
+                        "BeforeFeatureFailed"});
+            testRunner.OnFeatureStart(featureInfo);
+        }
+        
+        [NUnit.Framework.TestFixtureTearDownAttribute()]
+        public virtual void FeatureTearDown()
+        {
+            testRunner.OnFeatureEnd();
+            testRunner = null;
+        }
+        
+        [NUnit.Framework.SetUpAttribute()]
+        public virtual void TestInitialize()
+        {
+        }
+        
+        [NUnit.Framework.TearDownAttribute()]
+        public virtual void ScenarioTearDown()
+        {
+            testRunner.OnScenarioEnd();
+        }
+        
+        public virtual void ScenarioSetup(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
+        {
+            testRunner.OnScenarioStart(scenarioInfo);
+        }
+        
+        public virtual void ScenarioCleanup()
+        {
+            testRunner.CollectScenarioErrors();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Should handle BeforeFeature failure")]
+        public virtual void ShouldHandleBeforeFeatureFailure()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Should handle BeforeFeature failure", ((string[])(null)));
+#line 4
+this.ScenarioSetup(scenarioInfo);
+#line hidden
+            this.ScenarioCleanup();
+        }
+    }
 }
 #pragma warning restore
 #endregion

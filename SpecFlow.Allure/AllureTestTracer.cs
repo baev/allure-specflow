@@ -13,8 +13,6 @@ namespace SpecFlow.Allure
 {
     public class AllureTestTracer : TestTracer, ITestTracer
     {
-        AllureAdapter adapter = AllureAdapter.Instance;
-
         public AllureTestTracer(ITraceListener traceListener, IStepFormatter stepFormatter, IStepDefinitionSkeletonProvider stepDefinitionSkeletonProvider, RuntimeConfiguration runtimeConfiguration) : base(traceListener, stepFormatter, stepDefinitionSkeletonProvider, runtimeConfiguration)
         {
         }
@@ -24,38 +22,38 @@ namespace SpecFlow.Allure
             base.TraceStep(stepInstance, showAdditionalArguments);
 
             var title = $"{stepInstance.Keyword} {stepInstance.Text}";
-            adapter.StartStep(title);
+            AllureAdapter.Instance.StartStep(title);
         }
 
         void ITestTracer.TraceStepDone(BindingMatch match, object[] arguments, TimeSpan duration)
         {
             base.TraceStepDone(match, arguments, duration);
-            adapter.FinishStep();
+            AllureAdapter.Instance.FinishStep();
         }
 
         void ITestTracer.TraceError(Exception ex)
         {
             base.TraceError(ex);
-            adapter.FailStep();
+            AllureAdapter.Instance.FailStep();
 
         }
         void ITestTracer.TraceStepSkipped()
         {
             base.TraceStepSkipped();
-            adapter.CancelStep();
+            AllureAdapter.Instance.CancelStep();
         }
 
         void ITestTracer.TraceStepPending(BindingMatch match, object[] arguments)
         {
             base.TraceStepPending(match, arguments);
-            adapter.PendingStep();
+            AllureAdapter.Instance.PendingStep();
 
         }
 
         void ITestTracer.TraceNoMatchingStepDefinition(StepInstance stepInstance, TechTalk.SpecFlow.ProgrammingLanguage targetLanguage, System.Globalization.CultureInfo bindingCulture, List<BindingMatch> matchesWithoutScopeCheck)
         {
             base.TraceNoMatchingStepDefinition(stepInstance, targetLanguage, bindingCulture, matchesWithoutScopeCheck);
-            adapter.FailStep();
+            AllureAdapter.Instance.FailStep();
         }
     }
 }

@@ -14,7 +14,6 @@ namespace SpecFlow.Allure
 {
     class AllureBindingInvoker : BindingInvoker
     {
-        AllureAdapter adapter = AllureAdapter.Instance;
         public AllureBindingInvoker(RuntimeConfiguration runtimeConfiguration, IErrorProvider errorProvider) : base(runtimeConfiguration, errorProvider)
         {
         }
@@ -28,10 +27,10 @@ namespace SpecFlow.Allure
                 try
                 {
                     if (hook.HookType == HookType.BeforeFeature && hook.HookOrder == int.MinValue)
-                        adapter.StartSuite(contextManager.FeatureContext.FeatureInfo);
+                        AllureAdapter.Instance.StartSuite(contextManager.FeatureContext.FeatureInfo);
 
                     if (hook.HookType == HookType.AfterFeature && hook.HookOrder == int.MaxValue)
-                        adapter.FinishSuite(contextManager.FeatureContext.FeatureInfo);
+                        AllureAdapter.Instance.FinishSuite(contextManager.FeatureContext.FeatureInfo);
 
                     return base.InvokeBinding(hook, contextManager, arguments, testTracer, out duration);
                 }
@@ -43,16 +42,16 @@ namespace SpecFlow.Allure
                         case HookType.BeforeFeature:
                         case HookType.BeforeScenarioBlock:
                             var scenarioInfo = new ScenarioInfo(hook.HookType.ToString());
-                            adapter.FailTestSuite(contextManager.FeatureContext.FeatureInfo, scenarioInfo, ex);
+                            AllureAdapter.Instance.FailTestSuite(contextManager.FeatureContext.FeatureInfo, scenarioInfo, ex);
                             break;
 
                         case HookType.BeforeScenario:
-                            adapter.CancelTestCase(ex);
+                            AllureAdapter.Instance.CancelTestCase(ex);
                             break;
 
                         case HookType.AfterScenario:
                         case HookType.AfterStep:
-                            adapter.FinishTestCase(contextManager.ScenarioContext, ex);
+                            AllureAdapter.Instance.FinishTestCase(contextManager.ScenarioContext, ex);
                             break;
 
                         case HookType.BeforeStep:
