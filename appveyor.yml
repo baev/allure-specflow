@@ -1,0 +1,8 @@
+install:
+  - git submodule update --init --recursive
+  
+before_build:
+  - nuget restore SpecFlow.Allure.sln
+
+build_script: 
+  - msbuild SpecFlow.Allure.sln /p:Configuration=Debug /t:Rebuild
