@@ -1,7 +1,7 @@
 # SpecFlow.Allure
-SpecFlow adapter for Yandex Allure reporting system
+SpecFlow adapter for Yandex Allure reporting system.
 
-Nuget package:
+### The nuget package [![NuGet Status](http://img.shields.io/nuget/v/Specflow.Allure.svg?style=flat)](https://www.nuget.org/packages/Specflow.Allure/)
 ```
 PM> Install-Package SpecFlow.Allure
 ```
@@ -14,4 +14,3 @@ using TechTalk.SpecFlow;
 ScenarioContext scenarioContext;
 scenarioContext.AddAllureAttachment(path, "Attachment Title");
 ```
-
