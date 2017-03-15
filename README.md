@@ -13,4 +13,5 @@ using TechTalk.SpecFlow;
 ...
 ScenarioContext scenarioContext;
 scenarioContext.AddAllureAttachment(path, "Attachment Title");
+
 ```
