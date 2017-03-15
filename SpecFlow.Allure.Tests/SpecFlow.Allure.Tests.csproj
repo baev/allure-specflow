@@ -44,6 +44,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Xml" />
     <Reference Include="TechTalk.SpecFlow, Version=2.1.0.0, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
       <HintPath>..\packages\SpecFlow.2.1.0\lib\net45\TechTalk.SpecFlow.dll</HintPath>
       <Private>True</Private>
@@ -139,6 +140,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\allure-csharp-commons\AllureCSharpCommons\AllureCSharpCommons.csproj">
+      <Project>{0C358997-150B-4752-8B69-8B174167D730}</Project>
+      <Name>AllureCSharpCommons</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SpecFlow.Allure\SpecFlow.Allure.SpecFlowPlugin.csproj">
       <Project>{b9348e84-54ad-4eb9-8a53-f3be2b129b86}</Project>
       <Name>SpecFlow.Allure.SpecFlowPlugin</Name>
