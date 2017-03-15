@@ -10,14 +10,14 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace SpecFlow.Allure.Tests.Features
+namespace SpecFlow.Allure.Tests.TestFeatures
 {
     using TechTalk.SpecFlow;
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("Tags2", SourceFile="Features\\Tags2.feature", SourceLine=0)]
+    [TechTalk.SpecRun.FeatureAttribute("Tags2", SourceFile="Test Features\\Tags2.feature", SourceLine=0)]
     public partial class Tags2Feature
     {
         
@@ -99,92 +99,6 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void TestRunCleanup()
         {
             TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.1.0.0")]
-    [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Tags2")]
-    public partial class Tags2Feature_NUnit
-    {
-        
-        private TechTalk.SpecFlow.ITestRunner testRunner;
-        
-#line 1 "Tags2.feature"
-#line hidden
-        
-        [NUnit.Framework.TestFixtureSetUpAttribute()]
-        public virtual void FeatureSetup()
-        {
-            testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Tags2", null, ProgrammingLanguage.CSharp, ((string[])(null)));
-            testRunner.OnFeatureStart(featureInfo);
-        }
-        
-        [NUnit.Framework.TestFixtureTearDownAttribute()]
-        public virtual void FeatureTearDown()
-        {
-            testRunner.OnFeatureEnd();
-            testRunner = null;
-        }
-        
-        [NUnit.Framework.SetUpAttribute()]
-        public virtual void TestInitialize()
-        {
-        }
-        
-        [NUnit.Framework.TearDownAttribute()]
-        public virtual void ScenarioTearDown()
-        {
-            testRunner.OnScenarioEnd();
-        }
-        
-        public virtual void ScenarioSetup(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
-        {
-            testRunner.OnScenarioStart(scenarioInfo);
-        }
-        
-        public virtual void ScenarioCleanup()
-        {
-            testRunner.CollectScenarioErrors();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Bar 1")]
-        [NUnit.Framework.CategoryAttribute("bar")]
-        public virtual void Bar1()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Bar 1", new string[] {
-                        "bar"});
-#line 4
-this.ScenarioSetup(scenarioInfo);
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Goo")]
-        public virtual void Goo()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Goo", ((string[])(null)));
-#line 6
-this.ScenarioSetup(scenarioInfo);
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Foo 3")]
-        [NUnit.Framework.CategoryAttribute("foo")]
-        public virtual void Foo3()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Foo 3", new string[] {
-                        "foo"});
-#line 9
-this.ScenarioSetup(scenarioInfo);
-#line hidden
-            this.ScenarioCleanup();
         }
     }
 }
